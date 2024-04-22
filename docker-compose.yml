@@ -1,0 +1,19 @@
+#services:
+#  mysql
+
+services:
+  mysql:
+    container_name: mysql-bsn  # Customize the container name
+    image: mysql:latest  # You can specify a specific version if needed
+    environment:
+      MYSQL_DATABASE:  spring_email_validation # Database name
+      MYSQL_USER: root  # Database username
+      MYSQL_PASSWORD: B@d1r0@12  # Database password
+#      MYSQL_ROOT_PASSWORD: root_password  # Optional: Root user password
+    volumes:
+      - mysql-data:/var/lib/mysql/data  # Persistent storage for data
+    ports:
+      - 3306:3306  # Map container port 3306 to host port 3306
+
+volumes:
+  mysql-data:  # Define the volume for data persistence
